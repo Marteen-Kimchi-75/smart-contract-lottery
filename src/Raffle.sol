@@ -39,6 +39,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
     // EVENTS
     event RaffleEntered(address indexed player);
     event WinnerPicked(address indexed winner);
+    event RequestedRaffleWinner(uint256 indexed requestId);
 
     // CONSTRUCTOR
     constructor(
@@ -119,6 +120,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
                 extraArgs: VRFV2PlusClient._argsToBytes(VRFV2PlusClient.ExtraArgsV1({nativePayment: false})) // True: Sepolia ETH, False: LINK
             });
         uint256 requestId = s_vrfCoordinator.requestRandomWords(request);
+        emit RequestedRaffleWinner(requestId); // redundant
     }
 
     function fulfillRandomWords(uint256 requestId, uint256[] calldata randomWords) internal override {
