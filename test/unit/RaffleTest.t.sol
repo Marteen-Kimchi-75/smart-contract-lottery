@@ -32,7 +32,7 @@ contract RaffleTest is Test {
         vrfCoordinator = config.vrfCoordinator; 
         gasLane = config.gasLane;
         callbackGasLimit = config.callbackGasLimit;
-        subcriptionId = config.subcriptionId;
+        subcriptionId = config.subscriptionId;
         vm.deal(PLAYER, STARTING_PLAYER_BALANCE);
     }
 
@@ -72,7 +72,7 @@ contract RaffleTest is Test {
         vm.warp(block.timestamp + interval + 1); // Sets block's current time
         vm.roll(block.number + 1); // Sets the current block number
 
-        raffle.performUpkeep("");
+        raffle.performUpkeep(""); // <- Need to fix (fixed)
 
         vm.expectRevert(Raffle.Raffle__RaffleNotOpen.selector);
         vm.prank(PLAYER);
