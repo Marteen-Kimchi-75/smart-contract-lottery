@@ -72,7 +72,7 @@ contract HelperConfig is Script, CodeConstants {
             vrfCoordinator: 0x02667f44a6a44E4BDddCF80e724512Ad3426B17d,
             gasLane: 0xc3d5bc4d5600fa71f7a50b9ad841f14f24f9ca4236fd00bdb5fda56b052b28a4,
             callbackGasLimit: 500000,
-            subscriptionId: 0,
+            subscriptionId: 0, // not set
             link: 0xE4aB69C077896252FAFBD49EFD26B5D171A32410
         });
     }
@@ -95,7 +95,7 @@ contract HelperConfig is Script, CodeConstants {
             vrfCoordinator: address(vrfCoordinatorMock),
             gasLane: 0xc3d5bc4d5600fa71f7a50b9ad841f14f24f9ca4236fd00bdb5fda56b052b28a4, // doesn't matter
             callbackGasLimit: 500000,
-            subscriptionId: 0,
+            subscriptionId: 0, // We will create it ourselves
             link: address(linkToken)
         });
 

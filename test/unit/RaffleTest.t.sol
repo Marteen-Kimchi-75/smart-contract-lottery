@@ -47,7 +47,7 @@ contract RaffleTest is Test {
 
         // Act/Assert
         vm.expectRevert(Raffle.Raffle__SendMoreToEnter.selector); 
-        raffle.enterRaffle();
+        raffle.enterRaffle(); // Entering without sending ETH
     }
 
     function testRaffleRecordsPlayersWhenTheyEnter() public {

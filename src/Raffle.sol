@@ -7,7 +7,7 @@ import {VRFV2PlusClient} from "@chainlink/v0.8/vrf/dev/libraries/VRFV2PlusClient
 /**
  * @title A sample raffle contract
  * @author Kimy
- * @notice This contract is for creating a sample raffle
+ * @notice This contract is for creating a simple raffle
  * @dev Implements Chainlink VRFv2.5
  */
 contract Raffle is VRFConsumerBaseV2Plus {
@@ -48,7 +48,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
         bytes32 gasLane,
         uint256 subcriptionId,
         uint32 callbackGasLimit) 
-    VRFConsumerBaseV2Plus(vrfCoordinator) { // SEPOLIA VRF COORDINATOR ADDRESS: 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B
+    VRFConsumerBaseV2Plus(vrfCoordinator) {
         i_entranceFee = entranceFee;
         i_interval = interval;
         i_keyHash = gasLane;

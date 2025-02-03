@@ -7,7 +7,7 @@ import {HelperConfig} from "./HelperConfig.s.sol";
 import {CreateSubscription, FundSubscription, AddConsumer} from "./Interactions.s.sol";
 
 contract DeployRaffle is Script {
-    uint256 constant ENTRANCE_FEE = 1e13; // 0.00001 ETH
+    uint256 constant ENTRANCE_FEE = 1e15; // 0.001 ETH
     uint256 constant TIME_INTERVAL = 60; // 60 seconds = 1 minute
 
     function run() external {
