@@ -27,6 +27,7 @@ contract HelperConfig is Script, CodeConstants {
         uint32 callbackGasLimit;
         uint256 subscriptionId;
         address link;
+        address account;
     }
 
     NetworkConfig public localNetworkConfig;
@@ -61,7 +62,8 @@ contract HelperConfig is Script, CodeConstants {
             gasLane: 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae,
             callbackGasLimit: 500000,
             subscriptionId: 71867926214755076678426255454059055489262185799131533806730649807873917270340,
-            link: 0x779877A7B0D9E8603169DdbD7836e478b4624789
+            link: 0x779877A7B0D9E8603169DdbD7836e478b4624789,
+            account: 0xBbcE97f8BFCaB8503b4f9e06C4ae630EB244c8D2
         });
     }
 
@@ -73,7 +75,8 @@ contract HelperConfig is Script, CodeConstants {
             gasLane: 0xc3d5bc4d5600fa71f7a50b9ad841f14f24f9ca4236fd00bdb5fda56b052b28a4,
             callbackGasLimit: 500000,
             subscriptionId: 0, // not set
-            link: 0xE4aB69C077896252FAFBD49EFD26B5D171A32410
+            link: 0xE4aB69C077896252FAFBD49EFD26B5D171A32410,
+            account: 0xBbcE97f8BFCaB8503b4f9e06C4ae630EB244c8D2
         });
     }
 
@@ -96,7 +99,8 @@ contract HelperConfig is Script, CodeConstants {
             gasLane: 0xc3d5bc4d5600fa71f7a50b9ad841f14f24f9ca4236fd00bdb5fda56b052b28a4, // doesn't matter
             callbackGasLimit: 500000,
             subscriptionId: 0, // We will create it ourselves
-            link: address(linkToken)
+            link: address(linkToken),
+            account: 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38 // Foundry default address, from Base.sol
         });
 
         return localNetworkConfig;

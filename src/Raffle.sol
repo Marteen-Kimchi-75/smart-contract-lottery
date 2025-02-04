@@ -123,6 +123,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
         emit RequestedRaffleWinner(requestId); // redundant
     }
 
+    // Automatically called by the vrfcoordinator
     function fulfillRandomWords(uint256 requestId, uint256[] calldata randomWords) internal override {
         // CEI -> Checks, Effects, Interactions pattern
         // CHECKS
@@ -159,5 +160,13 @@ contract Raffle is VRFConsumerBaseV2Plus {
 
     function getPlayer(uint256 player_idx) external view returns (address) {
         return s_players[player_idx];
+    }
+
+    function getLastTimestamp() external view returns (uint256) {
+        return s_lastTimeStamp;
+    }
+    
+    function getRecentWinner() external view returns (address) {
+        return s_recentWinner;
     }
 }
